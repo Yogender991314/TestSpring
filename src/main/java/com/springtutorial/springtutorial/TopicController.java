@@ -38,4 +38,10 @@ public class TopicController {
     public void delete(@PathVariable String id){
         topicservice.delete(id);
     }
+    // This method get the name through the POST request and display the name in json format.
+    @RequestMapping(method = RequestMethod.POST,value="/hello")
+    public Greeting hello(@RequestBody Greeting gre){
+        return new Greeting("Hello "+gre.getName());
+    }
+
 }
